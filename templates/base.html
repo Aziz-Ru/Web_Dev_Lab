@@ -1,4 +1,4 @@
-{% load static %}
+<!-- {% load static %} -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,21 +42,21 @@
           </li>
           <li>
             <a
-              href="/about"
+              href="{% url 'about' %}"
               class="font-serif font-medium text-xl text-black md:mt-0 mt-2 md:mr-4 hover:text-cyan-600"
               >About</a
             >
           </li>
           <li>
             <a
-              href="/services/"
+              href="{% url 'services' %}"
               class="font-serif font-medium text-xl text-black md:mt-0 mt-2 md:mr-4 hover:text-cyan-600"
               >Services</a
             >
           </li>
           <li>
             <a
-              href="/project"
+              href="{% url 'project' %}"
               class="font-serif font-medium text-xl text-black md:mt-0 mt-2 md:mr-4 hover:text-cyan-600"
               >Project</a
             >
