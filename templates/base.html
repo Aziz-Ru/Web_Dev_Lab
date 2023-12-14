@@ -1,4 +1,4 @@
-<!-- {% load static %} -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,9 +12,13 @@
     />
 
     <title>{{title}}</title>
+    <!-- {% block header %}Header{%endblock%} -->
   </head>
   <body>
-    <header class="bg-cyan-400 flex justify-between items-center px-10 py-4">
+    <header
+      id="navlinks"
+      class="fixed bg-cyan-400 top-0 right-0 left-0 flex justify-between items-center px-10 py-4"
+    >
       <div class="md:inline-block hidden">
         <h1>LOGO</h1>
       </div>
@@ -71,6 +75,75 @@
         </ul>
       </nav>
     </header>
-    {% block content %} replace me{% endblock %}
+    
+    <div
+    class="w-full h-[100vh] flex justify-center items-center"
+  >
+  
+    <form action="" class="border-black border-2 py-6  w-[450px] bg-orange-400">
+      <div class="text-center font-extrabold text-3xl">
+          <p>Wayne Enterprise</p>
+      </div>
+      <div class="m-2 flex flex-col items-center justify-center font-4xl rounded-sm">
+        <label for="username" class="font-bold text-2xl text-black"
+          >Username
+        </label>
+
+        <input
+          type="text"
+          name="Username"
+          id="username"
+          class="bg-gray-300 h-10 w-full p-2"
+          required
+        />
+      </div>
+
+      <div class="m-2 flex flex-col items-center justify-center font-4xl rounded-sm">
+        <label for="password" class="font-bold text-xl text-black"
+          >Password
+        </label>
+
+        <input
+          type="password"
+          name="Password"
+          id="password"
+          class="bg-gray-300 h-10 w-full p-2"
+          required
+        />
+      </div>
+      <div class="m-2 flex flex-col items-center justify-center font-4xl rounded-sm">
+        <label for="email" class="font-bold text-xl text-black">Email </label>
+
+        <input
+          type="email"
+          name="Email"
+          id="email"
+          class="bg-gray-300 h-10 w-full p-2"
+          required
+        />
+      </div>
+
+      <div class="m-2 flex flex-col items-center justify-center font-4xl rounded-sm">
+        <label for="birthdate" class="font-bold text-xl text-black"
+          >Birthdate
+        </label>
+
+        <input
+          type="date"
+          name="Birthdate"
+          id="birthdate"
+          class="bg-gray-300 h-10 w-full p-2"
+          required
+        />
+      </div>
+      <div class="m-2 flex flex-col items-center justify-center font-4xl rounded-sm">
+          <input type="button" value="Submit"class="bg-blue-700 m-2 w-[400px] h-10 rounded-sm text-2xl font-bold hover:bg-blue-400 text-center" >
+      </div>
+    </form>
+  </div>
+
+    <!-- <main>{% block content %} replace me{% endblock %}</main> -->
+    <!-- {% static 'js/base.js' %} -->
+    <!-- <script type="text/javascript" src="/static//js/base.js"></script> -->
   </body>
 </html>
