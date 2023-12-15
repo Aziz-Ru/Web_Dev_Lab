@@ -1,10 +1,10 @@
 .main_content {
   display: grid;
   /* grid-gap: 10px; */
-  grid-template: repeat(2, 2fr) / repeat(auto-fit, minmax(450px, 1fr));
+  grid-template: repeat(2, 2fr) / repeat(auto-fit, minmax(420px, 1fr));
 }
 .feature_content {
-  width: 450px;
+  width: 420px;
   height: 200px;
   background-color: rgb(241, 139, 241);
   margin: 10px;
