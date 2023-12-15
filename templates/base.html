@@ -4,8 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- {% static 'src/output.css' %} -->
-    <link rel="stylesheet" href="{% static 'src/output.css' %}" />
+    <!-- {% static 'css/base.css' %} -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -15,135 +15,70 @@
     <!-- {% block header %}Header{%endblock%} -->
   </head>
   <body>
-    <header
-      id="navlinks"
-      class="fixed bg-cyan-400 top-0 right-0 left-0 flex justify-between items-center px-10 py-4"
-    >
-      <div class="md:inline-block hidden">
+    <header id="header">
+      <div class="logo_pic">
         <h1>LOGO</h1>
       </div>
       <div>
-        <h1 class="text-2xl font-extrabold font-serif">Wayne Enterprise</h1>
+        <h1>Wayne Enterprise</h1>
       </div>
-      <nav class="">
-        <ul>
-          <li class="md:hidden">
-            <button>
-              <i class="ri-menu-line text-2xl font-extrabold"></i>
-            </button>
+      <nav class="navlinks">
+        <ul id="navlinks_list" class="">
+          <li class="link_name">
+            <a href="/">Home</a>
+          </li>
+          <li class="link_name">
+            <a href="{% url 'about' %}">About</a>
+          </li>
+          <li class="link_name">
+            <a href="{% url 'services' %}">Services</a>
+          </li>
+          <li class="link_name">
+            <a href="{% url 'project' %}">Project</a>
+          </li>
+          <li class="link_name">
+            <a href="">Sign in</a>
           </li>
         </ul>
+        <div>
+          <div id="dropdown_menu">
+           <a href="" class="menu_icon">
+            <i class="ri-menu-line open_menu" id="open_menu_btn"></i>
+            <i class="ri-menu-line close_menu" id="close_menu_btn"></i>
+           </a>
 
-        <ul
-          class="absolute right-6 md:flex md:relative top-14 md:top-1/2 hidden"
-        >
-          <li>
-            <a
-              href="/"
-              class="font-serif font-medium text-xl text-black md:mt-0 mt-2 md:mr-4 hover:text-cyan-600"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="{% url 'about' %}"
-              class="font-serif font-medium text-xl text-black md:mt-0 mt-2 md:mr-4 hover:text-cyan-600"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="{% url 'services' %}"
-              class="font-serif font-medium text-xl text-black md:mt-0 mt-2 md:mr-4 hover:text-cyan-600"
-              >Services</a
-            >
-          </li>
-          <li>
-            <a
-              href="{% url 'project' %}"
-              class="font-serif font-medium text-xl text-black md:mt-0 mt-2 md:mr-4 hover:text-cyan-600"
-              >Project</a
-            >
-          </li>
-          <li>
-            <a
-              href=""
-              class="font-serif font-medium text-xl text-black md:mt-0 mt-2 md:mr-4 hover:text-cyan-600"
-              >Sign in</a
-            >
-          </li>
-        </ul>
+          <div id="drop_link_name">
+            <a href="/">Home</a>
+
+            <a href="{% url 'about' %}">About</a>
+
+            <a href="{% url 'services' %}">Services</a>
+
+            <a href="{% url 'project' %}">Project</a>
+
+            <a href="">Sign in</a>
+          </div>
+        </div>
       </nav>
     </header>
-    
-    <div
-    class="w-full h-[100vh] flex justify-center items-center"
-  >
-  
-    <form action="" class="border-black border-2 py-6  w-[450px] bg-orange-400">
-      <div class="text-center font-extrabold text-3xl">
-          <p>Wayne Enterprise</p>
-      </div>
-      <div class="m-2 flex flex-col items-center justify-center font-4xl rounded-sm">
-        <label for="username" class="font-bold text-2xl text-black"
-          >Username
-        </label>
+    <h1>HelloWorld</h1>
 
-        <input
-          type="text"
-          name="Username"
-          id="username"
-          class="bg-gray-300 h-10 w-full p-2"
-          required
-        />
-      </div>
-
-      <div class="m-2 flex flex-col items-center justify-center font-4xl rounded-sm">
-        <label for="password" class="font-bold text-xl text-black"
-          >Password
-        </label>
-
-        <input
-          type="password"
-          name="Password"
-          id="password"
-          class="bg-gray-300 h-10 w-full p-2"
-          required
-        />
-      </div>
-      <div class="m-2 flex flex-col items-center justify-center font-4xl rounded-sm">
-        <label for="email" class="font-bold text-xl text-black">Email </label>
-
-        <input
-          type="email"
-          name="Email"
-          id="email"
-          class="bg-gray-300 h-10 w-full p-2"
-          required
-        />
-      </div>
-
-      <div class="m-2 flex flex-col items-center justify-center font-4xl rounded-sm">
-        <label for="birthdate" class="font-bold text-xl text-black"
-          >Birthdate
-        </label>
-
-        <input
-          type="date"
-          name="Birthdate"
-          id="birthdate"
-          class="bg-gray-300 h-10 w-full p-2"
-          required
-        />
-      </div>
-      <div class="m-2 flex flex-col items-center justify-center font-4xl rounded-sm">
-          <input type="button" value="Submit"class="bg-blue-700 m-2 w-[400px] h-10 rounded-sm text-2xl font-bold hover:bg-blue-400 text-center" >
-      </div>
-    </form>
-  </div>
-
-    <!-- <main>{% block content %} replace me{% endblock %}</main> -->
+    <main>{% block content %} replace me{% endblock %}</main>
     <!-- {% static 'js/base.js' %} -->
     <!-- <script type="text/javascript" src="/static//js/base.js"></script> -->
+    <script>
+      const open_menu_btn=document.getElementById('#open_menu_btn');
+      const close_menu_btn=document.getElementById('close_menu_btn');
+      const drop_link_name=document.querySelector('#drop_link_name');
+
+      document.addEventListener('click',(event)=>{
+        
+        if(event.target.closest('#open_menu_btn')){
+          console.log('Hello WOrld')
+        //  close_menu_btn.classList.toggle('none');
+        }
+      })
+     
+    </script>
   </body>
 </html>
