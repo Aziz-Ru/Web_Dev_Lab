@@ -31,6 +31,13 @@ def indexes(request):
         }
         template_name='pages/project.html'
     elif request.path=='/sign_in/':
+        try:
+            username=request.GET['username']
+            email=request.GET['email']
+            password=request.GET['password']
+            birthdate=request.GET['birthdate']
+        except:
+            pass
         data={
             'title':'Sign Form',
             'descrip':'sign',
