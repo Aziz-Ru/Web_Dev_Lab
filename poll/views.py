@@ -30,11 +30,19 @@ def indexes(request):
             'descrip':'Projects'
         }
         template_name='pages/project.html'
+    elif request.path=='/sign_in/':
+        data={
+            'title':'Sign Form',
+            'descrip':'sign',
+        }
+        template_name='pages/sign.html'
+
     elif request.path=='/enroll/':
         data={
             'title':'Enroll',
         }
         template_name='check.html'
+
         
 
     return render(request,template_name,data)

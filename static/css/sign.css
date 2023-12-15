@@ -1,0 +1,31 @@
+body {
+  background-color: goldenrod;
+}
+.content {
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.form_container {
+  background-color: white;
+}
+.form_content {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+.input_type {
+  height: 50px;
+  width: 300px;
+  margin-bottom: 8px;
+  padding: 2px;
+}
+.submit_btn {
+  font-size: 30px;
+  height: 50px;
+  width: 300px;
+  margin-bottom: 8px;
+  padding: 2px;
+  background-color: rgb(45, 45, 230);
+}
