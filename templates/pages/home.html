@@ -1,1 +1,12 @@
-{% extends 'base.html' %} {% block content %} {% endblock %}
+{% extends 'base.html' %} {% block header_constent %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css'%}" />
+{%endblock%} {% block content %}
+<div class="main_content">
+  {% for lang in list %}
+  <div class="feature_content">
+    <div class="lang_name">{{lang}}</div>
+    <a href="{% url 'enroll' %}" class="enrol_btn">Enroll</a>
+  </div>
+
+  {% endfor %} {% endblock %}
+</div>

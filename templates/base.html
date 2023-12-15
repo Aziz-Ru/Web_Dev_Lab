@@ -12,15 +12,16 @@
     />
 
     <title>{{title}}</title>
-    <!-- {% block header %}Header{%endblock%} -->
+    {% block header_constent %}Header{%endblock%}
   </head>
   <body>
+   
     <header id="header">
       <div class="logo_pic">
         <h1>LOGO</h1>
       </div>
       <div>
-        <h1>Wayne Enterprise</h1>
+        <h1>Free Courses</h1>
       </div>
       <nav class="navlinks">
         <ul id="navlinks_list" class="">
@@ -61,12 +62,11 @@
         </div>
       </nav>
     </header>
-    <h1>HelloWorld</h1>
 
-    <main>{% block content %} replace me{% endblock %}</main>
+    {% block content %} replace me{% endblock %}
     <!-- {% static 'js/base.js' %} -->
     <!-- <script type="text/javascript" src="/static//js/base.js"></script> -->
-    <script>
+    <!-- <script>
       const open_menu_btn=document.getElementById('#open_menu_btn');
       const close_menu_btn=document.getElementById('close_menu_btn');
       const drop_link_name=document.querySelector('#drop_link_name');
@@ -79,6 +79,6 @@
         }
       })
      
-    </script>
+    </script> -->
   </body>
 </html>

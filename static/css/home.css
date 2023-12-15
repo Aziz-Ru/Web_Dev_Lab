@@ -1,0 +1,33 @@
+.main_content {
+  display: grid;
+  /* grid-gap: 10px; */
+  grid-template: repeat(2, 2fr) / repeat(auto-fit, minmax(300px, 1fr));
+}
+.feature_content {
+  width: 300px;
+  height: 200px;
+  background-color: rgb(241, 139, 241);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  /* font-size: 3rem; */
+  /* border: 2px solid black; */
+}
+.lang_name {
+  font-size: 3rem;
+}
+.enrol_btn {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(72, 72, 211);
+  color: black;
+  font-size: 2rem;
+}
+
+.enrol_btn:hover {
+  background-color: rgb(151, 151, 197);
+}
