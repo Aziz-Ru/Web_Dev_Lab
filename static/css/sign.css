@@ -18,6 +18,7 @@ body {
 .input_type {
   height: 50px;
   width: 300px;
+  font-size: 1.2rem;
   margin-bottom: 8px;
   padding: 2px;
 }
