@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 # Create your views here.
 
 
@@ -30,20 +30,6 @@ def indexes(request):
             'descrip':'Projects'
         }
         template_name='pages/project.html'
-    elif request.path=='/sign_in/':
-        try:
-            username=request.GET['username']
-            email=request.GET['email']
-            password=request.GET['password']
-            birthdate=request.GET['birthdate']
-        except:
-            pass
-        data={
-            'title':'Sign Form',
-            'descrip':'sign',
-        }
-        template_name='pages/sign.html'
-
     elif request.path=='/enroll/':
         data={
             'title':'Enroll',
@@ -53,5 +39,40 @@ def indexes(request):
         
 
     return render(request,template_name,data)
+
+def signup(request):
+        data={}
+        try:
+            if request.method=='GET':
+                username=request.GET['username']
+                email=request.GET['email']
+                password=request.GET['password']
+                birthdate=request.GET['birthdate']
+                data={
+                 'username':username,
+                'email':email,
+                'password':password,
+                'date':birthdate,
+                }
+            elif request.method=='POST':
+                username=request.POST['username']
+                email=request.POST['email']
+                password=request.POST['password']
+                birthdate=request.POST['birthdate']
+                data={
+                 'username':username,
+                'email':email,
+                'password':password,
+                'date':birthdate,
+                }
+                return HttpResponseRedirect('/')
+
+        except:
+            pass
+        
+        template_name='pages/sign.html'
+        return render(request,template_name,data)
+        
+
 
 

@@ -1,48 +1,53 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/sign.css' %}" />
-    <title>Sign in</title>
-    {% csrf_token %}
-  </head>
-  <body>
-    <div class="content">
-      {% csrf_token %}
-      <div class="form_container">
-        <!-- <h2>Free Course</h2> -->
+{% extends 'base.html' %} {% block header_constent %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/sign.css'%}" />
+{%endblock%} {% block content %}
+<div class="content">
+  <!-- {% csrf_token %} -->
+  <div class="form_container">
+    <!-- <h2>Free Course</h2> -->
 
-        <form action="" method="get" class="form_content">
-          <input
-            class="input_type"
-            type="text"
-            name="username"
-            id=""
-            placeholder="Username"
-          />
-          <input
-            class="input_type"
-            name="email"
-            type="email"
-            placeholder="Email"
-          />
-          <input
-            class="input_type"
-            name="password"
-            type="password"
-            placeholder="Password"
-          />
-          <input
-            class="input_type"
-            name="birthdate"
-            type="date"
-            placeholder="Birthdate"
-          />
-          <input class="submit_btn" type="submit" value="Sign in" />
-        </form>
-      </div>
-    </div>
-  </body>
-</html>
+    <form method="post" class="form_content">
+      {% csrf_token %}
+      <input
+        class="input_type"
+        type="text"
+        name="username"
+        value="{{username}}"
+        id=""
+        placeholder="Username"
+        required
+      />
+      <input
+        class="input_type"
+        name="email"
+        value="{{email}}"
+        type="email"
+        placeholder="Email"
+      />
+      <input
+        class="input_type"
+        name="password"
+        type="password"
+        value="{{password}}"
+        placeholder="Password"
+        required
+      />
+      <input
+        class="input_type"
+        name="birthdate"
+        type="date"
+        value="{{date}}"
+        placeholder="Birthdate"
+        required
+      />
+      <input class="submit_btn" type="submit" value="Sign in" required />
+    </form>
+  </div>
+  <div>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+  </div>
+</div>
+{% endblock %}
