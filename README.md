@@ -45,7 +45,7 @@ python3.9 manage.py collectstatic
 #here you must be give python3.9
 ```
 
-#### In setting.py file of project `import os` in import section and ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh'] below STATIC_URL paste this lines of code
+#### In setting.py file of project `import os` in import section and ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh'] and below STATIC_URL paste this lines of code
 
 ```
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
@@ -64,14 +64,14 @@ DATABASES = {
 }
 ```
 
-#### In urls.py add this line code
+#### In urls.py add this line code in import section
 
 ```
 from django.conf import settings
 from django.conf.urls.static import static
 ```
 
-add this line of code below
+#### add this line of code below urlpatterns like that:
 
 ```
 urlpatterns = [
@@ -80,6 +80,7 @@ urlpatterns = [
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
 ```
 
 # Installed Postgresql Database in ubuntu
