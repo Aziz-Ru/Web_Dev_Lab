@@ -36,6 +36,8 @@
 
 ##### create a file name `build_files.sh` in root directory of your project paste this line of code
 
+##### To create `requirements.txt` run this `pip freeze > requirements.txt`.
+
 ```
 # build_files.sh
 pip install -r requirements.txt
