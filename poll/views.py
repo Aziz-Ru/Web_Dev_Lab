@@ -65,7 +65,7 @@ def signup(request):
                 'password':password,
                 'date':birthdate,
                 }
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/about/')
 
         except:
             pass

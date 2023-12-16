@@ -1,6 +1,6 @@
 # To deploy Your Django app in Vercel
 
-##### create `vercel.json` file in root directory of your project paste this line of code and change projectname your actaul project name:
+## create `vercel.json` file of your project directory and paste this line of code and change projectname your actaul project name:
 
 ```
 {
@@ -34,9 +34,9 @@
 
 ```
 
-##### To create `requirements.txt` run this `pip freeze > requirements.txt`.
+## To create `requirements.txt` run this `pip freeze > requirements.txt`.
 
-##### create a file name `build_files.sh` in root directory of your project paste this line of code
+## create a file name `build_files.sh` in your project directory and paste this line of code
 
 ```
 # build_files.sh
@@ -45,15 +45,13 @@ python3.9 manage.py collectstatic
 #here you must be give python3.9
 ```
 
-#### In setting.py file of project `import os` in import section and modify ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh'] and below the STATIC_URL paste this lines of code
+## Modify setting.py
 
-```
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
+##### `import os` in import section
 
-```
+##### ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']
 
-#### If you don't have install postgresql please Comment Database setion of setting.py
+##### If you don't have install postgresql please Comment Database setion of setting.py
 
 ```
 DATABASES = {
@@ -64,7 +62,17 @@ DATABASES = {
 }
 ```
 
-#### In urls.py add this line code in import section
+##### Below the `STATIC_URL = 'static/'` paste this lines of code:
+
+```
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
+
+```
+
+## Modify urls.py-------
+
+##### import section add these line code:
 
 ```
 from django.conf import settings
@@ -82,6 +90,8 @@ urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 ```
+
+## -------
 
 ## Now Push Your code in Github and Create a account in vercel.com with github.com
 
