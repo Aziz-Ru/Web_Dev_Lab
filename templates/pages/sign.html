@@ -6,7 +6,7 @@
   <div class="form_container">
     <!-- <h2>Free Course</h2> -->
 
-    <form method="post" class="form_content">
+    <form method="post" class="form_content" action="{% url 'submit_form'%}">
       {% csrf_token %}
       <input
         class="input_type"
@@ -43,11 +43,6 @@
       <input class="submit_btn" type="submit" value="Sign in" required />
     </form>
   </div>
-  <div>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-  </div>
+  
 </div>
 {% endblock %}

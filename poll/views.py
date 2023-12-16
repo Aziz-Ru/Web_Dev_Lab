@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
+from . form import userForm
 # Create your views here.
 
 
@@ -12,6 +13,8 @@ def indexes(request):
         }
         template_name='pages/home.html'
     elif request.path=='/about/':
+        if request.method=='GET':
+            output=request.GET.get('output')
         data={
             'title':'About',
             'descrip':'About Page'
@@ -36,42 +39,11 @@ def indexes(request):
         }
         template_name='check.html'
 
-        
-
+    
     return render(request,template_name,data)
 
-def signup(request):
-        data={}
-        try:
-            if request.method=='GET':
-                username=request.GET['username']
-                email=request.GET['email']
-                password=request.GET['password']
-                birthdate=request.GET['birthdate']
-                data={
-                 'username':username,
-                'email':email,
-                'password':password,
-                'date':birthdate,
-                }
-            elif request.method=='POST':
-                username=request.POST['username']
-                email=request.POST['email']
-                password=request.POST['password']
-                birthdate=request.POST['birthdate']
-                data={
-                 'username':username,
-                'email':email,
-                'password':password,
-                'date':birthdate,
-                }
-                return HttpResponseRedirect('/about/')
-
-        except:
-            pass
+# def signup(request):
         
-        template_name='pages/sign.html'
-        return render(request,template_name,data)
         
 
 
