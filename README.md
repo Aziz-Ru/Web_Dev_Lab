@@ -1,6 +1,6 @@
 # To deploy Your Django app in Vercel
 
-## create `vercel.json` file of your project directory and paste this line of code and change projectname your actaul project name:
+### create `vercel.json` file of your project directory and paste this line of code and change projectname your actaul project name:
 
 ```
 {
@@ -34,9 +34,9 @@
 
 ```
 
-## To create `requirements.txt` run this `pip freeze > requirements.txt`.
+### To create `requirements.txt` run this `pip freeze > requirements.txt`.
 
-## create a file name `build_files.sh` in your project directory and paste this line of code
+### Create a file name `build_files.sh` in your project directory and paste this line of code
 
 ```
 # build_files.sh
@@ -45,7 +45,7 @@ python3.9 manage.py collectstatic
 #here you must be give python3.9
 ```
 
-## Modify setting.py
+### Modify setting.py-------
 
 ##### `import os` in import section
 
@@ -70,16 +70,16 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
 
 ```
 
-## Modify urls.py-------
+### Modify urls.py-------
 
-##### import section add these line code:
+##### Import section add these line code:
 
 ```
 from django.conf import settings
 from django.conf.urls.static import static
 ```
 
-#### add this line of code below urlpatterns like that:
+#### Add this line of code below urlpatterns like that:
 
 ```
 urlpatterns = [
@@ -91,7 +91,7 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 ```
 
-## -------
+### -------
 
 ## Now Push Your code in Github and Create a account in vercel.com with github.com
 
