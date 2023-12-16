@@ -1,6 +1,6 @@
 # To deploy Your Django app in Vercel
 
-##### create `vercel.json` file in root directory of your project paste this line of code
+##### create `vercel.json` file in root directory of your project paste this line of code and change projectname your actaul project name:
 
 ```
 {
@@ -34,9 +34,9 @@
 
 ```
 
-##### create a file name `build_files.sh` in root directory of your project paste this line of code
-
 ##### To create `requirements.txt` run this `pip freeze > requirements.txt`.
+
+##### create a file name `build_files.sh` in root directory of your project paste this line of code
 
 ```
 # build_files.sh
@@ -45,7 +45,7 @@ python3.9 manage.py collectstatic
 #here you must be give python3.9
 ```
 
-#### In setting.py file of project `import os` in import section and ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh'] and below STATIC_URL paste this lines of code
+#### In setting.py file of project `import os` in import section and modify ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh'] and below the STATIC_URL paste this lines of code
 
 ```
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
@@ -82,6 +82,8 @@ urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 ```
+
+## Now Push Your code in Github and Create a account in vercel.com with github.com
 
 # Installed Postgresql Database in ubuntu
 
