@@ -140,10 +140,22 @@ psql --version
 sudo -i -u postgres
 ```
 
+#### To exit from it
+
+```
+exit
+```
+
 #### To interact with the database server run
 
 ```
 psql
+```
+
+#### To exit from it
+
+```
+\q
 ```
 
 #### To create Database user & password run this
