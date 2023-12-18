@@ -4,7 +4,7 @@ from .models import user
 def index(request):
     if request.path=='/sign_up/':
         userData=user.objects.all()
-        print(userData)
+        # print(userData)
         data={
              'user':userData
         }
