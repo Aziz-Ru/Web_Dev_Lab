@@ -32,14 +32,16 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'poll.apps.PollConfig',
-    'login',
+    'rest_framework',
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -78,9 +80,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'silicon',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'my_db',
+        'USER': 'aziz',
         'PASSWORD': 'aziz121',
         'HOST': 'localhost',
         'PORT': 5432

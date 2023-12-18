@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
-
+from polls.views import save_question_result,question_detail
 urlpatterns = [
-   
-    path('',include('poll.urls')),
-    path('sign_up/',include('login.urls')),
+
+    # path('polls/',include('polls.urls')),
+    path('api/save_result/',save_question_result),
+    path('polls/<question_uid>/',question_detail,name='question_detail'),
     path('admin/', admin.site.urls),
 ]
 

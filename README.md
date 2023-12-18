@@ -1,6 +1,8 @@
 # To create Virtual Environment to install Django in Ubuntu
 
-##### If you dont have venv then install it `sudo apt install python3-venv`
+##### If you dont have venv then install it
+
+`sudo apt install python3-venv`
 
 ##### To create environment ` python3 -m venv my_env`
 
@@ -13,6 +15,10 @@
 ##### If you want to install django specifiq version `python3 -m pip install Django==3.2`
 
 ##### Create A project `django-admin startproject mysite`
+
+##### Create App `python3 manage.py startapp app_name`
+
+##### Migrate database run `python3 manage.py migrate`
 
 # To deploy Your Django app in Vercel
 
@@ -46,11 +52,10 @@
     }
   ]
 }
-# change projectname your actual projectname
 
 ```
 
-### To create `requirements.txt` run this `pip freeze > requirements.txt`.
+### To create `requirements.txt` run this `pip freeze > requirements.txt`
 
 ### Create a file name `build_files.sh` in your project directory and paste this line of code
 
@@ -65,7 +70,7 @@ python3.9 manage.py collectstatic
 
 ##### `import os` in import section
 
-##### ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']
+##### `ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']`
 
 ##### If you don't have install postgresql please Comment Database setion of setting.py
 
@@ -125,25 +130,41 @@ app=application
 
 #### To Show psql version `psql --version`.
 
-#### Navigate back to the Postgres shell and run the following commands consecutively` sudo -i -u postgres`.
+#### Navigate back to the Postgres shell and run the following commands consecutively `sudo -i -u postgres`
 
-#### To interact with the database server run ` psql`.
+#### To interact with the database server run ` psql`
 
-#### To create Database user & password run this ` CREATE USER username WITH PASSWORD 'password';`.
+#### To create Database user & password run this ` CREATE USER username WITH PASSWORD 'password';`
 
-#### To create a database run this `CREATE DATABASE db_name; ` or `createdb db_name `.
+#### To create a database run this `` CREATE DATABASE db_name; ` or `createdb db_name  ``
 
 #### To delete a database run this `DROP DATABASE db_name;`.
 
 #### To see list of db here `\l`.
 
+#### To see list of user `\du`
+
+#### Delete user
+
+```
+DROP USER IF EXISTS username;
+//if this command not working  show cannot be dropped because some objects depend on it//
+Reassign the user  run this command
+REASSIGN OWNED BY username TO postgres;
+and the drop
+DROP OWNED BY username;
+
+
+
+```
+
 #### To connect db run `\c db_name`.
 
 # Install postgresql in Django
 
-#### To install postgresql in virstual environment run `pip install psycopg2-binary`.
+#### To install postgresql in virstual environment run ```pip install psycopg2-binary```
 
-#### To change requirement.txt file run `pip freeze > requirements.txt`.
+#### To change requirement.txt file run ```pip freeze > requirements.txt```
 
 #### Now Change in setting.py DATABASE section
 
@@ -152,13 +173,18 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'database_name',
-        'USER': 'user_name_of_psql',
-        'PASSWORD': 'password_pf_psql',
+        'USER': 'user_name',
+        'PASSWORD': 'password_pf_user',
         'HOST': 'localhost',
         'PORT': 5432
     }
 }
 
+```
+#### Alter database owner from postgres to user 
+
+```
+ALTER DATABASE my_db OWNER TO user;
 ```
 
 #### To migrate database run `python3 manage.py migrate`.
