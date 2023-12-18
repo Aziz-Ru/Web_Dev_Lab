@@ -137,68 +137,68 @@ psql --version
 #### Navigate back to the Postgres shell and run the following commands consecutively
 
 ```
-sudo -i -u postgres
+silicon@ubuntu: sudo -i -u postgres
 ```
 
 #### To exit from it
 
 ```
-exit
+postgres@ubuntu:~$ exit
 ```
 
 #### To interact with the database server run
 
 ```
-psql
+postgres@ubuntu:~$ psql
 ```
 
 #### To exit from it
 
 ```
-\q
+postgres=# \q
 ```
 
 #### To create Database user & password run this
 
 ```
-CREATE USER username WITH PASSWORD 'password';
+postgres=#CREATE USER username WITH PASSWORD 'password';
 ```
 
 #### To create a database run this
 
 ```
-CREATE DATABASE db_name;
+postgres-#CREATE DATABASE db_name;
 or
-createdb db_name
+postgres-#createdb db_name
 ```
 
 #### To delete a database run this
 
 ```
-DROP DATABASE db_name;
+postgres-#DROP DATABASE db_name;
 ```
 
 #### To see list of db here
 
 ```
-\l
+postgres-#\l
 ```
 
 #### To see list of user
 
 ```
-\du
+postgres-#\du
 ```
 
 #### Delete user
 
 ```
-DROP USER IF EXISTS username;
+postgres-#DROP USER IF EXISTS username;
 //if this command not working  show cannot be dropped because some objects depend on it//
 Reassign the user  run this command
-REASSIGN OWNED BY username TO postgres;
+postgres-#REASSIGN OWNED BY username TO postgres;
 and the drop
-DROP OWNED BY username;
+postgres-#DROP OWNED BY username;
 
 
 
@@ -239,7 +239,7 @@ DATABASES = {
 #### Alter database owner from postgres to user
 
 ```
-ALTER DATABASE my_db OWNER TO user;
+postgres-#ALTER DATABASE my_db OWNER TO user;
 ```
 
 #### To migrate database run `python3 manage.py migrate`.
