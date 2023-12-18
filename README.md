@@ -68,9 +68,13 @@ python3.9 manage.py collectstatic
 
 ### Modify setting.py-------
 
-##### `import os` in import section
+##### In import section
 
-##### `ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']`
+```
+import os
+##Change in Allowed host
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']
+```
 
 ##### If you don't have install postgresql please Comment Database setion of setting.py
 
@@ -100,13 +104,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 ```
 
-#### Add this line of code below urlpatterns like that:
+#### Add this line of code below `urlpatterns` list :
 
 ```
-urlpatterns = [
-###
-]
-
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
@@ -128,21 +128,55 @@ app=application
 
 ### Just go to the postges website and copy and pase the command to install postgres shell and pgadmin4 .
 
-#### To Show psql version `psql --version`.
+#### To Show psql version
 
-#### Navigate back to the Postgres shell and run the following commands consecutively `sudo -i -u postgres`
+```
+psql --version
+```
 
-#### To interact with the database server run ` psql`
+#### Navigate back to the Postgres shell and run the following commands consecutively
 
-#### To create Database user & password run this ` CREATE USER username WITH PASSWORD 'password';`
+```
+sudo -i -u postgres
+```
 
-#### To create a database run this `` CREATE DATABASE db_name; ` or `createdb db_name  ``
+#### To interact with the database server run
 
-#### To delete a database run this `DROP DATABASE db_name;`.
+```
+psql
+```
 
-#### To see list of db here `\l`.
+#### To create Database user & password run this
 
-#### To see list of user `\du`
+```
+CREATE USER username WITH PASSWORD 'password';
+```
+
+#### To create a database run this
+
+```
+CREATE DATABASE db_name;
+or
+createdb db_name
+```
+
+#### To delete a database run this
+
+```
+DROP DATABASE db_name;
+```
+
+#### To see list of db here
+
+```
+\l
+```
+
+#### To see list of user
+
+```
+\du
+```
 
 #### Delete user
 
@@ -158,13 +192,21 @@ DROP OWNED BY username;
 
 ```
 
-#### To connect db run `\c db_name`.
+#### To connect db run `\c db_name`
 
 # Install postgresql in Django
 
-#### To install postgresql in virstual environment run ```pip install psycopg2-binary```
+#### To install postgresql in virstual environment run
 
-#### To change requirement.txt file run ```pip freeze > requirements.txt```
+```
+pip install psycopg2-binary
+```
+
+#### To change requirement.txt file run
+
+```
+pip freeze > requirements.txt
+```
 
 #### Now Change in setting.py DATABASE section
 
@@ -174,14 +216,15 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'database_name',
         'USER': 'user_name',
-        'PASSWORD': 'password_pf_user',
+        'PASSWORD': 'password_of_user',
         'HOST': 'localhost',
         'PORT': 5432
     }
 }
 
 ```
-#### Alter database owner from postgres to user 
+
+#### Alter database owner from postgres to user
 
 ```
 ALTER DATABASE my_db OWNER TO user;
@@ -196,4 +239,10 @@ django.db.migrations.exceptions.MigrationSchemaMissing: Unable to create the dja
 LINE 1: CREATE TABLE "django_migrations"
 ```
 
-#### Go your psql shell and GRANT the the databse to user`GRANT ALL ON DATABASE mydb TO myuser;` and `ALTER DATABASE my_db OWNER TO myuser;`.
+#### Go your psql shell and GRANT the the databse to user
+
+```
+GRANT ALL ON DATABASE mydb TO myuser;
+ and
+ALTER DATABASE my_db OWNER TO myuser;
+```
