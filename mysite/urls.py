@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from polls.views import save_question_result,question_detail
 urlpatterns = [
 
-    # path('polls/',include('polls.urls')),
+    path('',include('polls.urls')),
     path('api/save_result/',save_question_result),
     path('polls/<question_uid>/',question_detail,name='question_detail'),
     path('admin/', admin.site.urls),
