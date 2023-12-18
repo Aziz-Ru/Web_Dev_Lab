@@ -3,10 +3,10 @@ from django.http import HttpResponse,HttpRequest
 from .models import user
 def index(request):
     if request.path=='/sign_up/':
-        userData=user.objects.all()
+        # userData=user.objects.all()
         # print(userData)
         data={
-             'user':userData
+            #  'user':userData
         }
         return render(request,'pages/sign.html',data)
      
