@@ -1,24 +1,104 @@
 # To create Virtual Environment to install Django in Ubuntu
 
+##### Check python version
+
+```
+python3 --version
+```
+
+##### If You don't install pip package manger install it
+
+```
+sudo apt install python3-pip
+```
+
+##### Check pip version
+
+```
+pip --version
+```
+
+##### pip is a package installer where you can install pip package example:
+
+```
+pip install django
+//install django
+pip install psycopg2-binary
+// PostgreSQL database adapter for the Python programming language
+pip install djangorestframework
+//install djangorestframework
+//you can choose specifiq version of package when install package
+pip install django==4.2
+
+
+```
+
 ##### If you dont have venv then install it
 
-`sudo apt install python3-venv`
+```
+sudo apt install python3-venv
+```
 
-##### To create environment ` python3 -m venv my_env`
+##### To create environment
 
-##### Activate the environment `source my_env/bin/activate`
+```
+python3 -m venv my_envname
+```
 
-##### Deactivate the environment `deactivate `
+##### Activate the environment
 
-##### Install django `python3 -m pip install Django`
+```
+source my_env/bin/activate
+```
 
-##### If you want to install django specifiq version `python3 -m pip install Django==3.2`
+##### Deactivate the environment
 
-##### Create A project `django-admin startproject mysite`
+```
+deactivate
+```
 
-##### Create App `python3 manage.py startapp app_name`
+##### Install django
 
-##### Migrate database run `python3 manage.py migrate`
+```
+pip install Django
+```
+
+##### If you want to install django specifiq version like 4.1
+
+```
+pip install Django==4.1
+```
+
+##### Create A project
+
+```
+django-admin startproject mysite
+```
+
+##### Create App
+
+```
+python3 manage.py startapp app_name
+```
+
+##### Migrate database run
+
+```
+python3 manage.py migrate
+```
+
+##### When you want your app is going to create something in db:
+
+```
+//you need to add INSTALLED_APPS=[]
+'polls.apps.PollsConfig',
+```
+
+##### When You change in models.py you need to makemigrations:
+
+```
+python3 manage.py makemigrations
+```
 
 # To deploy Your Django app in Vercel
 
@@ -247,7 +327,7 @@ postgres-#ALTER DATABASE my_db OWNER TO user;
 #### If You face Error :
 
 ```
-django.db.migrations.exceptions.MigrationSchemaMissing: Unable to create the django_migrations table (permission denied for schema public
+django.db.migrations.exceptions.MigrationSchemaMissing: Unable to create the django_migrations table (permission denied for schema public)
 LINE 1: CREATE TABLE "django_migrations"
 ```
 
