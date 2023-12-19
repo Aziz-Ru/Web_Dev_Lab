@@ -305,7 +305,7 @@ pip freeze > requirements.txt
 ```
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'database_name',
         'USER': 'user_name',
         'PASSWORD': 'password_of_user',
