@@ -35,7 +35,7 @@ def question_detail(request,question_uid):
         print(e)
         # return redirect('/')
 
-    return render(request,'question.html')
+    return render(request,'question.html',context)
 
 def index(request):
      if request.path=='/':

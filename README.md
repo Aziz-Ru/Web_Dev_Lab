@@ -6,7 +6,7 @@
 python3 --version
 ```
 
-##### If You don't install pip package manger install it
+##### If You don't have install pip package manger install it
 
 ```
 sudo apt install python3-pip
@@ -91,7 +91,7 @@ python3 manage.py migrate
 
 ```
 //you need to add INSTALLED_APPS=[]
-'polls.apps.PollsConfig',
+'app_name.apps.PollsConfig',
 ```
 
 ##### When You change in models.py you need to makemigrations:
@@ -102,7 +102,7 @@ python3 manage.py makemigrations
 
 # To deploy Your Django app in Vercel
 
-### create `vercel.json` file of your project directory and paste this line of code and change projectname your actaul project name:
+##### create `vercel.json` file of your project directory and paste this line of code and change projectname your actaul project name:
 
 ```
 {
@@ -135,9 +135,9 @@ python3 manage.py makemigrations
 
 ```
 
-### To create `requirements.txt` run this `pip freeze > requirements.txt`
+##### To create `requirements.txt` run this `pip freeze > requirements.txt`
 
-### Create a file name `build_files.sh` in your project directory and paste this line of code
+##### Create a file name `build_files.sh` in your project directory and paste this line of code
 
 ```
 # build_files.sh
@@ -146,7 +146,7 @@ python3.9 manage.py collectstatic
 #here you must be give python3.9
 ```
 
-### Modify setting.py-------
+##### Modify setting.py-------
 
 ##### In import section
 
