@@ -213,6 +213,10 @@ app=application
 ```
 psql --version
 ```
+#### To check posgres services
+```
+sudo systemctl status postgresql.service
+```
 
 #### Navigate back to the Postgres shell and run the following commands consecutively
 
